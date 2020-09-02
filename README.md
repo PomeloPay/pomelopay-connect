@@ -90,6 +90,7 @@ The transaction object exists of specific fields that are either user-defined ar
 | localId | string | A local reference by the merchant or third-party system | ID1234 | Yes | - |
 | customerReference | string | A reference made available to the customer | Invoice 2020-123 | Yes | - |
 | redirectUrl | string | The optional URL to redirect to after completion or failure of the payment | https://myshop.com/order/13245  | Yes | Only applicable in e-commerce transactions |
+| webhook | string | A custom webhook specifically for this transaction. Updates will be sent to both this URL and the optional company-wide webhook | https://foo.bar/hookIn/1234 | Yes |
 | id | string | The unique ID of the transaction in our system | 5e22e1037ac57f000841efff  | No | - |
 | qrcode | object | object containing the URL of the QR Code for this transaction | `{ url: 'https://example.org/image.png'}`  | No | - |
 | provider | string | The payment provider for this transaction | card  | Yes | Limited to the available payment providers for this merchant |
@@ -125,7 +126,9 @@ Body Example:
   "appVersion": "vendingSoftware1.0",
   "apiVersion": "2.0",
   "deviceId": "12345789",
-  "signMethod": "sha1"
+  "signMethod": "sha1",
+  "webhook": "https://www.foo.bar/hookIn/123",
+  "redirectUrl": "https://www.shop.url/order/1234",
 }
 ```
 
@@ -171,6 +174,8 @@ The calculation of the signature is as follows:
 Our system uses webhooks to receive **real-time notifications** about any transaction state changes. The webhooks are using the `POST` http method.
 
 It is strongly recommended to check the **signature** from the transaction and validate it to ensure the data is coming from an authentic source.
+
+Alternatively you can also specify a custom URL for a single specific transaction. 
 
 > For more information about verifying data integrity you can check the Verifing Data Integrity section. 
 
