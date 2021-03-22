@@ -90,7 +90,8 @@ The transaction object exists of specific fields that are either user-defined ar
 | localId | string | A local reference by the merchant or third-party system | ID1234 | Yes | - |
 | customerReference | string | A reference made available to the customer | Invoice 2020-123 | Yes | - |
 | redirectUrl | string | The optional URL to redirect to after completion or failure of the payment | https://myshop.com/order/13245  | Yes | Only applicable in e-commerce transactions |
-| webhook | string | A custom webhook specifically for this transaction. Updates will be sent to both this URL and the optional company-wide webhook | https://foo.bar/hookIn/1234 | Yes |
+| webhook | string | A custom webhook specifically for this transaction. Updates will be sent to both this URL and the optional company-wide webhook | https://foo.bar/hookIn/1234 | Yes | must be a valid URL starting with https:// |
+| expires | string | Set a validity for the payment in ISO timestring | 2021-01-01T12:12:12.000001Z | Yes | Must be at least 1 hour in the future and in ISO timestring (e.g. new Date().toISOString() and in UTC timezone |
 | id | string | The unique ID of the transaction in our system | 5e22e1037ac57f000841efff  | No | - |
 | qrcode | object | object containing the URL of the QR Code for this transaction | `{ url: 'https://example.org/image.png'}`  | No | - |
 | provider | string | The payment provider for this transaction | card  | Yes | Limited to the available payment providers for this merchant |
