@@ -235,7 +235,7 @@ If you're looking to use this API in a specific stack or framework you currently
 
 | Framework                  | Package                                                        |
 | ---------------------------|----------------------------------------------------------------| 
-| PHP7                       | [https://github.com/pomelopay/pomelopay-connect-php](https://github.com/pomelopay/pomelopay-connect-php)                     |
+| PHP7                       | [https://github.com/pomelopay/pomelopay-connect-php](https://github.com/pomelopay/pomelopay-connect-php) |                    | NodeJS                     | [https://github.com/PomeloPay/pomelopay-connect-node-ts/](https://github.com/PomeloPay/pomelopay-connect-node-ts/) |
 | Wordpress                  | [https://wordpress.org/plugins/pomelo-payment-gateway/](https://wordpress.org/plugins/pomelo-payment-gateway/) |
 | WooCommerce                | [https://wordpress.org/plugins/pomelo-payment-gateway/](https://wordpress.org/plugins/pomelo-payment-gateway/) |
 | Other                      | Build one and get featured here!                                |
